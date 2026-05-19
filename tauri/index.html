@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>待办事项</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>待办事项</h1>
+    <p class="subtitle" id="currentDate"></p>
+  </header>
+
+  <div class="stats" id="stats">
+    <div class="stat"><span class="num" id="statTotal">0</span><span class="label">全部</span></div>
+    <div class="stat"><span class="num" id="statActive">0</span><span class="label">进行中</span></div>
+    <div class="stat"><span class="num" id="statDone">0</span><span class="label">已完成</span></div>
+  </div>
+
+  <form class="add-form" id="addForm">
+    <div class="row">
+      <input type="text" id="inputTitle" placeholder="输入新任务..." required autocomplete="off">
+      <button type="submit" class="btn-add">添加</button>
+    </div>
+    <div class="row row-opts">
+      <select id="inputPriority">
+        <option value="10">低优先级</option>
+        <option value="20" selected>普通</option>
+        <option value="30">较高</option>
+        <option value="40">紧急</option>
+      </select>
+      <input type="text" id="inputCategory" placeholder="分类 (工作/个人...)" list="catList" autocomplete="off">
+      <datalist id="catList"></datalist>
+      <input type="date" id="inputDue">
+    </div>
+  </form>
+
+  <div class="toolbar">
+    <input type="text" id="search" placeholder="搜索..." autocomplete="off">
+    <div class="filters">
+      <button class="filter active" data-filter="all">全部</button>
+      <button class="filter" data-filter="active">进行中</button>
+      <button class="filter" data-filter="completed">已完成</button>
+    </div>
+    <button id="btnClearDone" class="btn-clear">清除已完成</button>
+  </div>
+
+  <ul class="task-list" id="taskList"></ul>
+  <div class="empty" id="empty">
+    <span class="icon">&#x1F4CB;</span>
+    <p>暂无待办</p>
+  </div>
+</div>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>
