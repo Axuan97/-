@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicehash/tauri-docs/v2/src/content/docs/_schema/config.schema.json",
+  "productName": "待办事项",
+  "version": "0.1.0",
+  "identifier": "com.todo.app",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "待办事项",
+        "width": 800,
+        "height": 700,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  }
+}
